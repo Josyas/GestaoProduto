@@ -1,0 +1,17 @@
+CREATE DATABASE dbcitel
+
+CREATE TABLE Categoria (
+    Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(150)
+);
+
+CREATE TABLE Produto (
+    Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Nome VARCHAR(100) NOT NULL,
+    Codigo VARCHAR(20) NOT NULL,
+    DataFabricacao DATE NOT NULL,
+    DataVencimento DATE NOT NULL,
+    Valor DECIMAL(10, 2) NOT NULL,
+    idCategoria INT,
+    FOREIGN KEY (idCategoria) REFERENCES Categoria(Id)
+);

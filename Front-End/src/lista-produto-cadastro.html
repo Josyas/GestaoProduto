@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlobalTrend</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="color: aliceblue;">Global Trend</a>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-3 col-lg-2 d-md-block sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="produto.html">Produto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="categoria.html">Categoria</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="lista-produto-cadastro.html">Lista de Produtos</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 content">
+                <div class="container scroll-container">
+                    <h1>Produtos Cadastrado</h1>
+                    <br/>
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>Nome</th>
+                          <th>Codigo</th>
+                          <th>Data Fabricação</th>
+                          <th>Data Vencimento</th>
+                          <th>Valor</th>
+                          <th>Categoria</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody id="item-table-body">
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="modal fade" id="edit-modal" tabindex="-1" aria-labelledby="edit-modal-label" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="edit-modal-label">Editar Categoria</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <form>
+                            <div class="form-group input">
+                              <label for="nomeInput">Nome</label>
+                              <input type="text" class="form-control" id="edit-nomeInput" required>
+                            </div>
+                            <div class="form-group input">
+                              <label for="codigoInput">Código</label>
+                              <input type="text" class="form-control" id="edit-codigoInput" required>
+                            </div>
+                            <div class="form-group input">
+                              <label for="dataFabricacaoInput">Data de fabricação</label>
+                              <input type="date" class="form-control" id="edit-dataFabricacaoInput" required>
+                            </div>
+                            <div class="form-group input">
+                              <label for="dataVencimentoInput">Data de vencimento</label>
+                              <input type="date" class="form-control" id="edit-dataVencimentoInput" required>
+                            </div>
+                            <div class="form-group input">
+                              <label for="valorInput">Valor</label>
+                              <input type="number" class="form-control" id="edit-valorInput" step="0.01" required>
+                            </div>
+                            <div class="form-group input">
+                              <label for="categoria-select">Categoria</label>
+                              <select class="form-select" id="categoria-dropdown"></select>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-primary" id="saveButton">Salvar</button>
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                
+            </main>
+        </div>
+    </div>
+    <script src="api/produtolista.js"></script>
+    <script src="api/categoriaget.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
